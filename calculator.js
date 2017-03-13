@@ -34,7 +34,7 @@ var calculator =  function () {
             currentNumber = currentNumber.toString();
             if ( currentNumber.indexOf("0") == 0 && btnValue == 0 && 
                  currentNumber.length < 2) {
-                    return;
+                return;
             }
             if ( resultField.classList.contains("big-number") ) {
                 resultField.classList.remove("big-number");
