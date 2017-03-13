@@ -32,10 +32,9 @@ var calculator =  function () {
 		}
 		if ( !isNaN(btnValue) || btnValue === "." ) {
 			currentNumber = currentNumber.toString();
-			if ( currentNumber.indexOf("0") == 0 && 
-				 btnValue == 0 && 
-				 currentNumber.length < 2) {
-					return;
+			if ( currentNumber.indexOf("0") == 0 && btnValue == 0 &&  
+			     currentNumber.length < 2) {
+				return;
 			}
 			if ( resultField.classList.contains("big-number") ) {
 				resultField.classList.remove("big-number");
@@ -43,7 +42,7 @@ var calculator =  function () {
 			if ( numberOfCharacters >= 13 && this.id !== "change" ) {
 				return;
 			}
-			if (! isCurrentNumber ) {
+			if ( !isCurrentNumber ) {
 				resultField.innerHTML = "";
 			}
 			isCurrentNumber = true;
@@ -166,7 +165,7 @@ var calculator =  function () {
 		result = 0;
 		currentNumber = "0";
 		resultField.innerHTML = 0;
-	    previousValueIsSymbol = false;
+	        previousValueIsSymbol = false;
 		isFirstNumber = true;
 		isCurrentNumber = true;
 		isFirstValue = true;
