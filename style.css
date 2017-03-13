@@ -76,7 +76,7 @@ body {
 }
 
 .button:active{
-	cursor:pointer;
-	position:relative;
-	top:2px;
+	cursor: pointer;
+	position: relative;
+	top: 2px;
 }
