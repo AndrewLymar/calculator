@@ -1,0 +1,82 @@
+body {
+	box-sizing: border-box;
+	line-height: 1;
+}
+
+.container {
+	width: 222px;
+	padding: 10px;
+	margin: 0 auto;
+	margin-top: 200px;
+	background-color: #B4AFB1;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border-radius: 7px 7px 7px 7px;
+	-moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    box-shadow: 3px 3px 1px #d1cfd1;
+}
+
+.button {
+	display: inline-block;
+	text-align: center;
+	width: 35px;
+	height: 30px;
+	margin-right: 5px;
+	margin-top: 15px;
+	font: normal 20px Verdana, Geneva, sans-serif;
+	font-style: normal;
+	color: #a5a5a5;
+	background: #dedede;
+	border: 1px solid #bbb;
+	text-shadow: 0px 1px 0px #fff;
+	box-shadow: 0px 1px 1px #d1cfd1;
+	-moz-box-shadow: 0px 1px 1px #d1cfd1;
+	-webkit-box-shadow: 0px 1px 1px #d1cfd1;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	padding: 5px 5px;
+	cursor: pointer;
+}
+
+.row {
+	display: inline-block;
+}
+
+.row .button:last-child {
+	margin-right: 0px;
+}
+
+.row .button:first-child {
+	margin-left: 3px;
+}
+
+.button#zero {
+	width: 91px;
+}
+
+.result {
+	background-color: #A0A3A3;
+	border: 1px solid #fff;
+	color: #fff;
+	padding: 5px 10px;
+	font-size: 30px;
+	text-shadow: 2px 0px 0px rgba(150, 150, 150, 0.34);
+	text-align: right;
+	border-radius:10px 10px 10px 10px;
+	-moz-border-radius:10px 10px 10px 10px;
+	-webkit-border-radius:10px 10px 10px 10px;
+}
+
+.result.big-number {
+	font-size: 20px;
+	padding: 10px 10px;
+}
+
+.button:active{
+	cursor:pointer;
+	position:relative;
+	top:2px;
+}
