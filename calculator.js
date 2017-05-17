@@ -1,6 +1,6 @@
 var calculator =  function () {
-    var buttons = document.querySelectorAll('div.button');
-    var resultField = document.querySelector('.result');
+    var buttons = document.querySelectorAll("div.button");
+    var resultField = document.querySelector(".result");
     var btnValue;
     var result = 0;
     var currentNumber = "0";
@@ -15,7 +15,7 @@ var calculator =  function () {
     var numberOfCharacters = 1;
 
     for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener('click', calculate, false);
+        buttons[i].addEventListener("click", calculate, false);
     }
     
     function calculate() {
@@ -30,25 +30,25 @@ var calculator =  function () {
         if (this.id === "back") {
             backspace();
         }
-        if ( !isNaN(btnValue) || btnValue === "." ) {
+        if (!isNaN(btnValue) || btnValue === ".") {
             currentNumber = currentNumber.toString();
-            if ( currentNumber.indexOf("0") == 0 && btnValue == 0 && 
+            if (currentNumber.indexOf("0") == 0 && btnValue == 0 && 
                  currentNumber.length < 2) {
                 return;
             }
             if ( resultField.classList.contains("big-number") ) {
                 resultField.classList.remove("big-number");
             }
-            if ( numberOfCharacters >= 13 && this.id !== "change" ) {
+            if (numberOfCharacters >= 13 && this.id !== "change") {
                 return;
             }
-            if ( !isCurrentNumber ) {
+            if (!isCurrentNumber) {
                 resultField.innerHTML = "";
             }
             isCurrentNumber = true;
             previousValueIsSymbol = false;
 
-            if ( btnValue !== "." ) {
+            if (btnValue !== ".") {
                 if (isFirstNumber) {
                     resultField.innerHTML = "";
                 }
@@ -66,14 +66,14 @@ var calculator =  function () {
             isFirstValue = false;
             numberOfCharacters = resultField.innerHTML.length;
         }
-        else if ( !previousValueIsSymbol && this.id !== "change" && this.id !== "back") {
+        else if (!previousValueIsSymbol && this.id !== "change" && this.id !== "back") {
             numberOfCharacters = 0;
             isCurrentNumber = false;
             resultIsShown = false;
             if ( currentNumber === "" ) {
                 currentNumber = result;
             }
-            if ( currentNumber === "0." || currentNumber === ".") {
+            if (currentNumber === "0." || currentNumber === ".") {
                 currentNumber = 0;
                 numberOfCharacters = 1;
             }
@@ -103,7 +103,7 @@ var calculator =  function () {
                     break;      
             }
 
-            if ( this.id === "calculate" ) {
+            if (this.id === "calculate") {
                 previousValueIsSymbol = false;
                 resultIsShown = true;
             }
@@ -114,7 +114,7 @@ var calculator =  function () {
         result = parseFloat(result);
         currentNumber = parseFloat(currentNumber);
         operator();
-        result = parseFloat(result.toFixed(10));
+        result = parseFloat( result.toFixed(10) );
         resultField.innerHTML = result;
         if (resultField.innerHTML.length >= 13) {
             resultField.classList.add("big-number");
@@ -137,7 +137,7 @@ var calculator =  function () {
     }
 
     var divide = function() {
-        if ( currentNumber !== 0 ) {
+        if (currentNumber !== 0) {
                 result /= currentNumber;
         }
         else {
@@ -153,7 +153,7 @@ var calculator =  function () {
             currentNumber += "0.";
         }
         else {
-            if ( currentNumber.indexOf(".") === -1 ) {
+            if (currentNumber.indexOf(".") === -1) {
                 resultField.innerHTML += ".";
                 currentNumber += ".";
             }
@@ -180,7 +180,7 @@ var calculator =  function () {
     }
 
     function changeSign() {
-        if ( !resultIsShown ) {
+        if (!resultIsShown) {
             currentNumber *= -1;
             resultField.innerHTML = currentNumber;
         }
@@ -193,7 +193,7 @@ var calculator =  function () {
                 lengthOfResult -= 1;
             }
             if (lengthOfResult >= 2) {
-                if ( resultIsShown ) {
+                if (resultIsShown) {
                     result = String(result);
                     result = result.slice(0, -1);
                     result = parseFloat(result);
